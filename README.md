@@ -8,3 +8,9 @@
   - 前端: angularJS +bootstrap 
   - 硬件使用 python+树莓派进行
   - 物品识别使用face++ API
+  
+idea 
+maven
+git
+
+
