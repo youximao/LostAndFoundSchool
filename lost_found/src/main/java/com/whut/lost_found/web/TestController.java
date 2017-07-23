@@ -1,8 +1,10 @@
 package com.whut.lost_found.web;
 
 import com.whut.lost_found.pojo.User;
+import com.whut.lost_found.service.TestService;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -37,5 +39,14 @@ public class TestController {
         }
         jsonObject.put("detil",jsonArray);
         return jsonObject;
+    }
+
+    @Autowired
+    TestService testService;
+
+    @RequestMapping(value = "/getAllUser")
+    @ResponseBody
+    public Object getAllUser(){
+        return testService.getAllUser();
     }
 }
