@@ -31,10 +31,12 @@ public class TestController {
         JSONObject jsonObject=new JSONObject();
         jsonObject.put("resulet","success");
         JSONArray jsonArray=new JSONArray();
+        String []name={"jia","jun","long"};
         for(int i=0;i<3;i++){
             JSONObject jj=new JSONObject();
             jj.put("id",i);
-            jj.put("zhe shi","神坑");
+            jj.put("name",name[i]);
+            jj.put("zheshi","神坑");
             jsonArray.add(jj);
         }
         jsonObject.put("detil",jsonArray);
