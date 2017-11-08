@@ -45,10 +45,10 @@
 		</dependency>
 
 
-		<dependency>
+		<!--<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
-		</dependency>
+		</dependency>-->
 
 
 		<!-- yml 配置文件 -->
@@ -101,6 +101,9 @@
 			<artifactId>javase</artifactId>
 			<version>3.3.0</version>
 		</dependency>
+
+
+
 
 
 	</dependencies>

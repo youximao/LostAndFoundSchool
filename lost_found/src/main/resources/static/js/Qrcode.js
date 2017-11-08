@@ -3,9 +3,14 @@
  */
 
 function init(){
-    
+
     
 }
 function getImg() {
 
+}
+function flushQr() {
+   // alert("ok");
+    $("#imgflu").attr("src","./getone");
+    console.info("daozhe");
 }

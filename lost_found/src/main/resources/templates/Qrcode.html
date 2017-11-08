@@ -12,16 +12,25 @@
     <script src="/lib/bootstrap-3.3.7-dist/js/bootstrap.js" ></script>
     <link href="/lib/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" />
 
+
+
+    <script src="/js/cao.js"></script>
     <script src="/js/Qrcode.js"></script>
 
-</head>
-<body>
-<div>
+   <!-- <script th:src="@{/js/cao.js}"></script>
+    <script th:src="@{/js/Qrcode.js}"></script>-->
 
-    <button>ddd</button>
+
+</head>
+<body onload="init()">
+<div >
+    <button class="form-control" onclick="flushQr()">ddd</button>
 </div>
-<div class="form-control">
-    <img  id="img" src="./getone" />
+<div class="col-lg-4">
+    <img class="img-responsive" id="imgs" src="./getone" />
+</div>
+<div>
+    <img class="img-responsive"  id="imgflu" src="./getflush"/>
 </div>
 
 </body>

@@ -8,8 +8,15 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
   thymeleaf:
     cache: false
-  #mvc:
-  #  static-path-pattern: /**
+ # mvc:
+  #  static-path-pattern: /resources/**
+
+ # resources:
+  #  chain:
+  #    strategy:
+  #      content:
+  #        enabled: true
+  #        paths: /**
 
 
   jpa:

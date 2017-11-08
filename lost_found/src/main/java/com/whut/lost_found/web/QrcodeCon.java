@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletResponse;
 import java.awt.image.BufferedImage;
-import java.io.IOException;
+import java.io.*;
 
 /**
  * Created by Administrator on 2017/11/7 0007.
@@ -40,6 +40,24 @@ public class QrcodeCon {
             e.printStackTrace();
         }
         //return new String("df");
+    }
+
+    @RequestMapping("/getflush")
+    public void getFLush(HttpServletResponse response) throws IOException {
+
+
+        try {
+            File file=new File("Image 2017-11-07_16-51-27.png");
+            FileInputStream fileInputStream=new FileInputStream(file);
+            byte []bytes=new byte[1024];
+            while (fileInputStream.read(bytes)!=-1) {
+                response.getOutputStream().write(bytes);
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        //OutputStream outputStream=new ObjectOutputStream(file);
+
     }
 
 }
