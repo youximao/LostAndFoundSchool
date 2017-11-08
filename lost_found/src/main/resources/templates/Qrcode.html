@@ -4,13 +4,14 @@
     <meta charset="UTF-8" />
     <title>二维码</title>
 
-    <script src="../static/lib/jquery-3.2.1.min.js" ></script>
+   <!-- <script src="../static/lib/jquery-3.2.1.min.js" ></script>
     <script src="../static/lib/bootstrap-3.3.7-dist/js/bootstrap.js" ></script>
-    <link href="../static/lib/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="../static/lib/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" />-->
 
     <script src="/lib/jquery-3.2.1.min.js" ></script>
     <script src="/lib/bootstrap-3.3.7-dist/js/bootstrap.js" ></script>
-    <link href="/lib/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" />
+
+    <link href="/lib/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" type="text/css"/>
 
 
 
@@ -24,14 +25,22 @@
 </head>
 <body onload="init()">
 <div >
-    <button class="form-control" onclick="flushQr()">ddd</button>
+    <button class="btn-group-lg" onclick="flushQr()">ddd</button>
 </div>
+
+
+
+
+
+<div>
+    <img class="img-responsive"  id="imgflu" src="./getflush?time=1"/>
+</div>
+
 <div class="col-lg-4">
     <img class="img-responsive" id="imgs" src="./getone" />
 </div>
 <div>
-    <img class="img-responsive"  id="imgflu" src="./getflush"/>
+    <button class="btn-default" onclick="getYanZhengCode()">刷新验证码</button>
 </div>
-
 </body>
 </html>
