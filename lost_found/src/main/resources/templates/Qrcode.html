@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
-    <title>图片上传</title>
+    <title>二维码</title>
 
     <script src="../static/lib/jquery-3.2.1.min.js" ></script>
-
     <script src="../static/lib/bootstrap-3.3.7-dist/js/bootstrap.js" ></script>
     <link href="../static/lib/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" />
 
@@ -13,19 +12,17 @@
     <script src="/lib/bootstrap-3.3.7-dist/js/bootstrap.js" ></script>
     <link href="/lib/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" />
 
-
+    <script src="/js/Qrcode.js"></script>
 
 </head>
 <body>
+<div>
 
-<form class="col-lg-1 form-control" method="POST" enctype="multipart/form-data"
-      action="../pic/update">
-
-<input type="file" name="file" />
-    <button type="submit">上传</button>
-</form>
-<div class="col-lg-1">dddfasdfa</div>
-
+    <button>ddd</button>
+</div>
+<div class="form-control">
+    <img  id="img" src="./getone" />
+</div>
 
 </body>
 </html>

@@ -45,6 +45,10 @@
 		</dependency>
 
 
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+		</dependency>
 
 
 		<!-- yml 配置文件 -->
@@ -89,6 +93,15 @@
 			<artifactId>netty-socketio</artifactId>
 			<version>1.7.11</version>
 		</dependency>
+
+
+		<!-- https://mvnrepository.com/artifact/com.google.zxing/core -->
+		<dependency>
+			<groupId>com.google.zxing</groupId>
+			<artifactId>javase</artifactId>
+			<version>3.3.0</version>
+		</dependency>
+
 
 	</dependencies>
 

@@ -22,10 +22,12 @@ import java.util.Map;
 @Controller
 @RequestMapping("/pic")
 public class PicutureCon {
+
     @RequestMapping("/updatehtml")
     public String getUpdateHtml(){
         return "picup";
     }
+
 
     @RequestMapping(value = "/update",method = RequestMethod.POST)
     @ResponseBody
