@@ -1,0 +1,31 @@
+body{
+    background-color: #2aabd2;
+}
+
+.font{
+    font-size: 100px;
+}
+.divcen{
+    text-align: center;
+    margin:auto;
+}
+
+.divbtn{
+
+    font-size: 50px;
+    padding-top: 280px;
+    padding-left: 20px;
+}
+.clickbtn{
+    background-color: #67b168;
+    margin: 0px 300px;
+    border-style: solid;
+    border-width: 3px;
+    border-color:red;
+}
+
+
+.picpad{
+    width: 100px;
+    height: 100px;
+}
