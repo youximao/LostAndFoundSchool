@@ -37,7 +37,7 @@ public class QrcodeCon {
     @RequestMapping("/getone")
     public void getOne(HttpServletResponse response){
         try {
-            BufferedImage bufferedImage= qrCodeUtil.toBufferedImage("http://www.maoxiaomiyy.com",500,500);
+            BufferedImage bufferedImage= qrCodeUtil.toBufferedImage("http://boke.maoxiaomiyy.com",500,500);
             ImageIO.write(bufferedImage, "JPEG", response.getOutputStream());
         } catch (WriterException e) {
             e.printStackTrace();
