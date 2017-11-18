@@ -1,6 +1,11 @@
 package com.whut.lost_found.web;
 
+import com.whut.lost_found.dao.TestGoodsRepertory;
+import com.whut.lost_found.pojo.Goods;
+import com.whut.lost_found.service.TestService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.Assert;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -12,6 +17,8 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.sql.Date;
+import java.sql.Time;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -23,6 +30,9 @@ import java.util.Map;
 @RequestMapping("/pic")
 public class PicutureCon {
 
+    @Autowired
+    TestGoodsRepertory testGoodsRepertory;
+
     @RequestMapping("/updatehtml")
     public String getUpdateHtml(){
         return "picup";
@@ -31,13 +41,34 @@ public class PicutureCon {
 
     @RequestMapping(value = "/update",method = RequestMethod.POST)
     @ResponseBody
-    public Object update(@RequestParam("file") MultipartFile file){
+    public Object update(@RequestParam("file") MultipartFile file,HttpServletRequest request){
+
+
+
+
+            //HttpServletRequest req
+            //  req.getSession().;
 
         Map<String,String> map=new HashMap<String,String>();
         if(!file.isEmpty()){
             try {
-                BufferedOutputStream out = new BufferedOutputStream(
-                        new FileOutputStream(new File(file.getOriginalFilename())));
+                File f=new File("./src/main/resources/static/images/"+file.getOriginalFilename());
+                BufferedOutputStream out = new BufferedOutputStream( new FileOutputStream(f));
+
+                Goods good=new Goods();
+                //  good.setId(Integer.valueOf(request.getParameter("id")));
+                good.setId(222);
+                good.setDescri("cheshi");
+                good.setFounddate(new Date(2017-11-7));
+                // good.setFoundtime((new Time(2:11:02));
+                good.setPhotopath("/images/"+f.getAbsoluteFile());
+                testGoodsRepertory.save(good);
+
+//                System.out.println(f);
+//                System.out.println(f.toPath());
+//                System.out.println(f.getName());
+//                System.out.println(f.getAbsoluteFile());
+//               System.out.println(f.getPath());
                 out.write(file.getBytes());
                 out.flush();
                 out.close();
@@ -67,7 +98,7 @@ public class PicutureCon {
             if (!file.isEmpty()) {
                 try {
                     byte[] bytes = file.getBytes();
-                    stream = new BufferedOutputStream(new FileOutputStream(new File(file.getOriginalFilename())));
+                    stream = new BufferedOutputStream(new FileOutputStream(new File(file.getOriginalFilename())));//加地址
                     stream.write(bytes);
                     stream.close();
                 } catch (Exception e) {
